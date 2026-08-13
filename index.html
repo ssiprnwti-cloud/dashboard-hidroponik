@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidroponik Monitoring System</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <h1>Dashboard Monitoring Hidroponik</h1>
+
+
+    <div class="container">
+
+        <div class="card">
+            <img src="suhu.png" width="50%" height="50%"/>
+            <h4>suhu</h4>
+            <p id="suhu">0 °C</p>
+        </div>
+
+         <div class="card">
+            <img src="Humidity.png" width="50%" height="50%"/>
+            <h4>Kelembapan</h4>
+            <p id="Kelembapan">0 %</p>
+        </div>
+
+         <div class="card">
+            <img src="tanaman.png" width="50%" height="50%"/>
+            <h4>Soil Moisture</h4>
+            <p id="soil">0 %</p>
+        </div>
+
+         <div class="card">
+            <img src="OIP.png" width="50%" height="50%"/>
+            <h4>Notifikasi</h4>
+            <p id="Notifikasi">Menunggu...</p>
+        </div>
+        </div>
+    </div>
+
+
+    <div class="chart-wrapper">
+    <div class="chart-container">
+        <canvas id="monitoringChart"></canvas>
+    </div>
+</div>
+
+<script>
+const ctx = document.getElementById('monitoringChart').getContext('2d');
+
+const monitoringChart = new Chart(ctx,{
+    type:'line',
+    data:{
+        labels:[],
+        datasets:[
+        {
+            label:'Suhu',
+            data:[],
+            borderColor:'red',
+            backgroundColor:'transparent',
+            borderWidth:3,
+            tension:1,
+            cubicInterpolationMode:'monotone',
+            pointRadius:3,
+            pointHoverRadius:5,
+            fill:false
+        },
+        {
+            label:'Kelembapan',
+            data:[],
+            borderColor:'blue',
+            backgroundColor:'transparent',
+            borderWidth:3,
+            tension:0.5,
+            cubicInterpolationMode:'monotone',
+            pointRadius:3,
+            pointHoverRadius:5,
+            fill:false
+        },
+        {
+            label:'Kondisi Media Tanam',
+            data:[],
+            borderColor:'green',
+            backgroundColor:'transparent',
+            borderWidth:3,
+            tension:0.5,
+            cubicInterpolationMode:'monotone',
+            pointRadius:3,
+            pointHoverRadius:5,
+            fill:false
+        }]
+    },
+    options:{
+        responsive:true,
+        maintainAspectRatio:false,
+        animation:{
+            duration:800,
+            easing:'easeInOutQuart'
+        },
+        interaction:{
+            intersect:false,
+            mode:'index'
+        }
+    }
+});
+</script>
+
+    <div class="button">
+        <button onclick="pompaON ()">
+        Pompa ON
+        </button>
+
+        <button onclick="pompaOFF ()">
+        pompaOFF
+        </button>
+    </div>
+
+    <div class="sidebar">
+
+        <div class="menu">
+            <img src="rumah.png" width="50"% height="50%">
+        </div>
+
+        <div class="menu">
+            <a href="log.html">
+                <img src="Menu.png" width="50"% height="50%">
+            </a>
+            
+        </div>
+
+        <div class="device">
+            <h2>Perangkat</h2>
+            <p>ESP32</p>
+            <p>Status:
+                <span class="online">Online</span>
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js" ></script>
+        
+
+  
+</body>
+</html>

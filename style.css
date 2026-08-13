@@ -1,0 +1,161 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    font-family: Arial;
+    background: #f4f9f9;
+    text-align: center;
+}
+
+h1{
+    color: #03573b;
+    margin: 30px ;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card{
+    background: white;
+    width: 200px;
+    height: 50;
+    margin: 10px;
+    padding: 50px;
+    border-radius: 13px;
+    box-shadow: 0px 0px 10px grey;
+}
+
+.card p{
+    font-size: 20px;
+    font-weight: bold;
+    color: #2E8B57;
+}
+
+.id{
+    text-align: left;
+    background: white;
+    width: 300px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow:0px 0px 10px gray;
+}
+
+.chart-wrapper{
+    display: flex;
+    justify-content: center; /* Tengah secara horizontal */
+    align-items: center;     /* Tengah secara vertikal (opsional) */
+    width: 100%;
+    margin-top: 30px;
+}
+
+.chart-container{
+    width: 650px;
+    height: 320px;
+    background: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.2);
+}
+.button{
+    padding: 20px;
+    margin: 10px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    width: auto;
+    display:inline-block;
+}
+
+.button:hover{
+    background: #2E8B57;
+    color: white;
+}
+
+.sidebar{
+    width: 150px;
+    height: 100vh;
+    background: #8feed0c2;
+    color:rgb(26, 23, 23);
+    position: fixed;
+    left: 0;
+    top: 0;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu{
+    list-style: none;
+    padding: 5px;
+    margin: 5px;
+}
+
+.menu a:hover{
+    background: #1abc9c;
+    border-radius: 50px;
+}
+
+.device{
+    margin: 10px;
+    border: 1px solid rgba (225,225,225,.2);
+    border-radius: 10px;
+    padding: 5px;
+    font-size: small;
+    box-shadow:0px 0px 10px gray;
+}
+
+
+/*halaman2*/
+.content{
+    margin-left:220px;
+    padding:30px;
+}
+
+.menu{
+    margin:20px 0;
+}
+
+.menu a{
+    text-decoration:none;
+    color:white;
+    font-size:18px;
+    display:block;
+    padding:10px;
+}
+
+.menu a:hover{
+    background:#1abc9c;
+    border-radius:8px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+    background:white;
+}
+
+th{
+    background:#2c3e50;
+    color:white;
+}
+
+th,td{
+    padding:12px;
+    text-align:center;
+}
+
+tr:nth-child(even){
+    background:#f2f2f2;
+}
